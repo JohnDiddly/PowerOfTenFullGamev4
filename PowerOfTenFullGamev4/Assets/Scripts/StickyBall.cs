@@ -19,8 +19,8 @@ public class StickyBall : MonoBehaviour
     public GameObject cameraReference;
     float distanceToCamera = 3f;
 
-    // ball size, starting at (really small)
-    float size = 0.00016f;
+    // ball size, starting at (1)
+    float size = 1f;
 
     // adding different groups
     public GameObject group1;
@@ -98,7 +98,7 @@ public class StickyBall : MonoBehaviour
         if (group1Unlocked == false)
         {
 
-            if (size >= .00016f)
+            if (size >= 1f)
             {
                 group1Unlocked = true;
                 for (int i = 0; i < group1.transform.childCount; i++)
@@ -110,7 +110,7 @@ public class StickyBall : MonoBehaviour
         else if (group2Unlocked == false)
         {
 
-            if (size >= 0.0008f)
+            if (size >= 2f)
             {
                 group2Unlocked = true;
                 for (int i = 0; i < group2.transform.childCount; i++)
@@ -285,8 +285,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(0.00016f, 0.00016f, 0.00016f);
-                size += 0.00016f;
+                transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+                size += 0.1f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -312,8 +312,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(0.0008f, 0.0008f, 0.0008f);
-                size += 0.0008f;
+                transform.localScale += new Vector3(0.4f, 0.4f, 0.4f);
+                size += 0.4f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
