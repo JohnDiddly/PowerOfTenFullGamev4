@@ -9,12 +9,12 @@ TagManager:
   - StickyCoin
   - StickyGoblet
   - StickyLamp
-  - StickSack
   - StickyBarrel
   - StickeyCar
   - StickyPole
   - StickyHouse
   - StickyBoat
+  - StickySack
   layers:
   - Default
   - TransparentFX
