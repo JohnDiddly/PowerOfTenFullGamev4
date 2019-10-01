@@ -84,7 +84,7 @@ public class StickyBall : MonoBehaviour
         // //Apply force behind the ball
         // this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * 10);
         //using size to adjust force
-        this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * (1 + (size / 10f)));
+        this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * (10 + (size*2f)));
 
         // Set Camera Position Behidn the Ball based on rotation
         cameraReference.transform.position = new Vector3(-unitv2.x * (distanceToCamera), distanceToCamera, -unitv2.y * (distanceToCamera)) + this.transform.position;
