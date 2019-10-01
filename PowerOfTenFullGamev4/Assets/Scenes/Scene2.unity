@@ -44656,6 +44656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingAngle: 0
   cameraReference: {fileID: 534669902}
+  size: 1
   group1: {fileID: 1934242042}
   group2: {fileID: 281097267}
   group3: {fileID: 1600141019}

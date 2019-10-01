@@ -20,7 +20,7 @@ public class StickyBall : MonoBehaviour
     float distanceToCamera = 3f;
 
     // ball size, starting at (1)
-    float size = 1f;
+    public float size = 1f;
 
     // adding different groups
     public GameObject group1;
