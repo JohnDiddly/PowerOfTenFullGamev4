@@ -15,6 +15,7 @@ TagManager:
   - StickyBoat
   - StickySack
   - StickyCar
+  - EndGame
   layers:
   - Default
   - TransparentFX
