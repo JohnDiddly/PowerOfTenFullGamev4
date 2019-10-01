@@ -240,7 +240,7 @@ public class StickyBall : MonoBehaviour
                     group10.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
                 }
                 // Change distance between camera and ball
-                distanceToCamera = 1500f;
+                distanceToCamera = 2000f;
             }
 
         }
