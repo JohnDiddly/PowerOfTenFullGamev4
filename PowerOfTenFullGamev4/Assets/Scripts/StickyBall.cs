@@ -84,7 +84,7 @@ public class StickyBall : MonoBehaviour
         // //Apply force behind the ball
         // this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * 10);
         //using size to adjust force
-        this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * (10 + (size*2f)));
+        this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * (10 + (size*20f)));
 
         // Set Camera Position Behidn the Ball based on rotation
         cameraReference.transform.position = new Vector3(-unitv2.x * (distanceToCamera), distanceToCamera, -unitv2.y * (distanceToCamera)) + this.transform.position;
@@ -368,8 +368,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(2f, 2f, 2f);
-                size += 2f;
+                transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
+                size += 1.5f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -395,8 +395,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(4f, 4f, 4f);
-                size += 4f;
+                transform.localScale += new Vector3(1.75f, 1.75f, 1.75f);
+                size += 1.75f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -417,6 +417,33 @@ public class StickyBall : MonoBehaviour
         }
 
         if (other.transform.CompareTag("StickyBarrel"))
+        {
+            if (0 < size)
+            {
+
+                // Grow the Sticky Ball
+                transform.localScale += new Vector3(2.5f, 2.5f, 2.5f);
+                size += 2.5f;
+
+                // Disable so that the objects will only stick to your sphere
+                other.enabled = false;
+
+                // Becomes Child so it stays with the ball
+                other.transform.SetParent(this.transform);
+
+                // Create text in the public GameObject sizeUI. Math.Round rounds off the sticky ball size to (five) decimals
+                sizeUI.GetComponent<Text>().text = "Mass: " + Math.Round(size, 6).ToString();
+
+                // Sound effect when we Pick up a Sticky Object
+                this.GetComponent<AudioSource>().PlayOneShot(pickupSound);
+
+                // Print to Console, works like println () in Processing or print() in p5
+                Debug.Log(size);
+
+            }
+        }
+
+        if (other.transform.CompareTag("StickyCar"))
         {
             if (0 < size)
             {
@@ -443,41 +470,14 @@ public class StickyBall : MonoBehaviour
             }
         }
 
-        if (other.transform.CompareTag("StickyCar"))
-        {
-            if (0 < size)
-            {
-
-                // Grow the Sticky Ball
-                transform.localScale += new Vector3(10f, 10f, 10f);
-                size += 10f;
-
-                // Disable so that the objects will only stick to your sphere
-                other.enabled = false;
-
-                // Becomes Child so it stays with the ball
-                other.transform.SetParent(this.transform);
-
-                // Create text in the public GameObject sizeUI. Math.Round rounds off the sticky ball size to (five) decimals
-                sizeUI.GetComponent<Text>().text = "Mass: " + Math.Round(size, 6).ToString();
-
-                // Sound effect when we Pick up a Sticky Object
-                this.GetComponent<AudioSource>().PlayOneShot(pickupSound);
-
-                // Print to Console, works like println () in Processing or print() in p5
-                Debug.Log(size);
-
-            }
-        }
-
         if (other.transform.CompareTag("StickyPole"))
         {
             if (0 < size)
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(15f, 15f, 15f);
-                size += 15f;
+                transform.localScale += new Vector3(6f, 6f, 6f);
+                size += 6f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -503,8 +503,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(40f, 40f, 40f);
-                size += 40f;
+                transform.localScale += new Vector3(7f, 7f, 7f);
+                size += 7f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -530,8 +530,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(30f, 30f, 30f);
-                size += 30f;
+                transform.localScale += new Vector3(8f, 8f, 8f);
+                size += 8f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
