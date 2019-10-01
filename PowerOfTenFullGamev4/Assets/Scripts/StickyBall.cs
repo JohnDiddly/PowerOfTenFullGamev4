@@ -81,8 +81,8 @@ public class StickyBall : MonoBehaviour
     private void FixedUpdate()
     {
 
-        // // Apply force behind the ball
-        //this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * 1);
+        // //Apply force behind the ball
+        // this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * 10);
         //using size to adjust force
         this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitv2.x, 0, unitv2.y) * z * (1 + (size / 10f)));
 
@@ -202,7 +202,7 @@ public class StickyBall : MonoBehaviour
         else if (group8Unlocked == false)
         {
 
-            if (size >= 280f)
+            if (size >= 200f)
             {
                 group8Unlocked = true;
                 for (int i = 0; i < group8.transform.childCount; i++)
@@ -210,14 +210,14 @@ public class StickyBall : MonoBehaviour
                     group8.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
                 }
                 // Change distance between camera and ball
-                distanceToCamera = 560f;
+                distanceToCamera = 500f;
             }
 
         }
         else if (group9Unlocked == false)
         {
 
-            if (size >= 560f)
+            if (size >= 400f)
             {
                 group9Unlocked = true;
                 for (int i = 0; i < group9.transform.childCount; i++)
@@ -225,14 +225,14 @@ public class StickyBall : MonoBehaviour
                     group9.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
                 }
                 // Change distance between camera and ball
-                distanceToCamera = 1120f;
+                distanceToCamera = 1200f;
             }
 
         }
         else if (group10Unlocked == false)
         {
 
-            if (size >= 1120f)
+            if (size >= 600f)
             {
                 group10Unlocked = true;
                 for (int i = 0; i < group10.transform.childCount; i++)
@@ -240,7 +240,7 @@ public class StickyBall : MonoBehaviour
                     group10.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
                 }
                 // Change distance between camera and ball
-                distanceToCamera = 2240f;
+                distanceToCamera = 1500f;
             }
 
         }
@@ -368,8 +368,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(4f, 4f, 4f);
-                size += 4f;
+                transform.localScale += new Vector3(2f, 2f, 2f);
+                size += 2f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -449,8 +449,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(20f, 20f, 20f);
-                size += 20f;
+                transform.localScale += new Vector3(10f, 10f, 10f);
+                size += 10f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -476,8 +476,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(4f, 4f, 4f);
-                size += 4f;
+                transform.localScale += new Vector3(15f, 15f, 15f);
+                size += 15f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -503,8 +503,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(4f, 4f, 4f);
-                size += 4f;
+                transform.localScale += new Vector3(40f, 40f, 40f);
+                size += 40f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
@@ -530,8 +530,8 @@ public class StickyBall : MonoBehaviour
             {
 
                 // Grow the Sticky Ball
-                transform.localScale += new Vector3(4f, 4f, 4f);
-                size += 4f;
+                transform.localScale += new Vector3(30f, 30f, 30f);
+                size += 30f;
 
                 // Disable so that the objects will only stick to your sphere
                 other.enabled = false;
